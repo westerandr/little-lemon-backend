@@ -9,9 +9,10 @@ from django.contrib.auth.models import User
 def index(request):
   return render(request, 'index.html', {})
 
-class MenuItemView(generics.ListCreateAPIView):
+class MenuItemsView(generics.ListCreateAPIView):
   serializer_class = MenuSerializer
   queryset = Menu.objects.all()
+  permission_classes = [permissions.IsAuthenticated]
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
   serializer_class = MenuSerializer
@@ -20,6 +21,7 @@ class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView
 class BookingViewSet(viewsets.ModelViewSet):
   serializer_class = BookingSerializer
   queryset = Booking.objects.all()
+  permission_classes = [permissions.IsAuthenticated]
 
 class UserViewSet(viewsets.ModelViewSet):
   serializer_class = UserSerializer
