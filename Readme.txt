@@ -29,9 +29,9 @@ GET, POST - /restaurant/booking/tables
 PUT, PATCH, DELETE - /restaurant/booking/tables/<int:pk>
 
 * Auth Routes
-Obtain Token - /restaurant/obtain-auth-token
-Login - /auth/token/login
-Logout - /auth/token/logout
+Obtain Token - POST /restaurant/obtain-auth-token
+Login - POST /auth/token/login
+Logout - POST /auth/token/logout
 
 * User Routes
 User List - GET /auth/users
